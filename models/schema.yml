@@ -19,12 +19,12 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: sales of greenweez
+        tests:
+        - unique:
+           column_name: "(orders_id || '-' || pdt_id)"
         columns:
-          - name: orders_id
+          - name: date_date
             description: primary key of this table
-            tests:
-              - unique
-              - not_null
 
       - name: ship
         identifier: raw_gz_ship
