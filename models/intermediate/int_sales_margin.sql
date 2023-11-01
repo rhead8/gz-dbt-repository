@@ -4,7 +4,7 @@ SELECT
     orders_id,
     revenue, 
     quantity, 
-    purchase_price, 
+    purchse_price AS purchase_price, 
     ROUND(s.quantity*p.purchase_price,2) AS purchase_cost,
     s.revenue - ROUND(s.quantity*p.purchase_price,2) AS margin
 FROM {{ref("stg_raw__sales")}} s
